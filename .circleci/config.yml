@@ -36,9 +36,9 @@ jobs:
   #          ansible-playbook -i inventory.txt main4.yml
      # Exercise: Smoke Testing
   smoke_test:
-  docker:
+   docker:
     - image: alpine:latest
-  steps:
+   steps:
     - run: apk add --update curl
     - run:
         name: smoke test
