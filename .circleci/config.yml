@@ -25,7 +25,7 @@ jobs:
       - checkout
       - add_ssh_keys:
               # You can get this ID in the section where you registered the SSH Key
-              fingerprints: ["ad:9d:b7:be:1f:9a:23:5f:26:e5:a7:db:19:93:b8:ee"] 
+              fingerprints: ["de:25:b4:fb:d3:b6:3e:21:65:a4:ad:c2:74:08:15:8f"] 
       - run:
           name: Install dependencies
           command: |
@@ -33,7 +33,7 @@ jobs:
       - run:
           name: Configure server
           command: |
-            ansible-playbook main4.yml -i inventory.txt              
+            ansible-playbook -i inventory.txt main4.yml               
 # Sequential workflow
 workflows:
   # Name the workflow
