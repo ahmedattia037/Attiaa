@@ -1,6 +1,6 @@
 version: 2.1
 # Use a package of configuration called an orb.
-orbs:
+#orbs:
   # Choose either one of the orbs below
   # welcome: circleci/welcome-orb@0.4.1
   # aws-cli: circleci/aws-cli@2.0.3
@@ -19,6 +19,7 @@ jobs:
             --template-file bucket.yml \
             --stack-name stack-create-bucket-${CIRCLE_WORKFLOW_ID:0:7} \
             --parameter-overrides MyBucketName="mybucket-${CIRCLE_WORKFLOW_ID:0:7}"
+      - run: aws s3 sync . s3://mybucket-${CIRCLE_WORKFLOW_ID:0:7} --delete      
 
   get_last_deployment_id:
     docker:
